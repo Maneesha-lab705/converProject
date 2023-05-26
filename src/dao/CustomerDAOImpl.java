@@ -6,7 +6,7 @@ import model.ItemDTO;
 import java.sql.*;
 import java.util.ArrayList;
 
-public class CustomerDAOImpl implements  CrudDAO<CustomerDTO,String>{
+public class CustomerDAOImpl implements CustomerDAO{
     @Override
     public ArrayList<CustomerDTO> getAll() throws SQLException, ClassNotFoundException {
         ArrayList<CustomerDTO> allCustomers = new ArrayList<>();
@@ -61,6 +61,11 @@ public class CustomerDAOImpl implements  CrudDAO<CustomerDTO,String>{
         ResultSet rst =CrudUtil.execute("SELECT * FROM Customer WHERE id=?",s);
         rst.next();
         return new CustomerDTO(s + "", rst.getString("name"), rst.getString("address"));
+    }
+
+    @Override
+    public void getAllCustomer() {
+        System.out.println("hi");
     }
 
 
