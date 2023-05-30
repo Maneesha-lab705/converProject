@@ -11,7 +11,8 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-public interface PurchesOrderBO {
+public interface PurchesOrderBO extends SuperBO{
+
     public boolean PurchersOrder(String orderId, LocalDate orderDate, String customerId, List<OrderDetailDTO> orderDetails);
 
     public CustomerDTO searchCustomer(String id) throws SQLException, ClassNotFoundException ;
