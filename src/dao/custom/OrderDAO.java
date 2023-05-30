@@ -1,8 +1,6 @@
-package dao;
+package dao.custom;
 
 import model.OrderDTO;
-
-import java.sql.SQLException;
 
 public interface OrderDAO extends CrudDAO<OrderDTO,String> {
 //     String generateOID() throws SQLException, ClassNotFoundException ;

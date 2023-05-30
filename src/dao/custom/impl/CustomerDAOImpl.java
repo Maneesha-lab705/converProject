@@ -1,12 +1,13 @@
-package dao;
+package dao.custom.impl;
 
+import dao.CrudUtil;
+import dao.custom.CustomerDAO;
 import model.CustomerDTO;
-import model.ItemDTO;
 
 import java.sql.*;
 import java.util.ArrayList;
 
-public class CustomerDAOImpl implements CustomerDAO{
+public class CustomerDAOImpl implements CustomerDAO {
     @Override
     public ArrayList<CustomerDTO> getAll() throws SQLException, ClassNotFoundException {
         ArrayList<CustomerDTO> allCustomers = new ArrayList<>();

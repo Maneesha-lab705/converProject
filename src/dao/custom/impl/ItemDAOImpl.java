@@ -1,15 +1,17 @@
-package dao;
+package dao.custom.impl;
 
+import dao.CrudUtil;
+import dao.custom.ItemDAO;
 import model.ItemDTO;
 
 import java.sql.*;
 import java.util.ArrayList;
 
-public class ItemDAOImpl implements  ItemDAO{
+public class ItemDAOImpl implements ItemDAO {
     @Override
     public ArrayList<ItemDTO> getAll() throws SQLException, ClassNotFoundException {
         ArrayList<ItemDTO> allItems = new ArrayList<>();
-        ResultSet rst =CrudUtil.execute("SELECT * FROM Item");
+        ResultSet rst = CrudUtil.execute("SELECT * FROM Item");
         while (rst.next()) {
             allItems.add(new ItemDTO(rst.getString("code"), rst.getString("description"), rst.getBigDecimal("unitPrice"), rst.getInt("qtyOnHand")));
         }

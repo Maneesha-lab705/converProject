@@ -1,8 +1,6 @@
-package dao;
+package dao.custom;
 
 import model.OrderDetailDTO;
-
-import java.sql.SQLException;
 
 public interface OrderDetailDAO extends CrudDAO<OrderDetailDTO,String>{
 //     boolean saveOrderDetails(OrderDetailDTO dto) throws SQLException, ClassNotFoundException;
